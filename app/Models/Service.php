@@ -5,12 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Workspace extends Model
+class Service extends Model
 {
     use HasFactory;
-    protected $hidden = [
-        'updated_at',
-        'created_at',
-        'user_id'
-    ];
 }

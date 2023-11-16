@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\WorkspaceController;
+use App\Http\Controllers\WorkSpaceController;
 
 
 /*
@@ -26,6 +26,7 @@ Route::prefix('login')->group(function() {
 
 Route::middleware('auth:sanctum')->group(function() {
     Route::resource('workspace', WorkspaceController::class);
+    Route::get('/workspace/details',[ WorkSpaceController::class, 'details']);
     // Route::middleware('count.quotes')->group(function() {
     //     Route::resource('workspace.token', Tokencontroller::class);
     // });

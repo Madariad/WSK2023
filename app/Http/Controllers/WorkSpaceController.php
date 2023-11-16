@@ -9,12 +9,17 @@ class WorkSpaceController extends Controller
 {
     public function index(Request $request)
     {
-        $workSpaceList = Workspace::where('user_id', $request->user())->get();
+        $workSpaceList = Workspace::where('user_id', $request->user()->id)->get();
         return view('Workspaces.index', ['data' => $workSpaceList]);
     }
 
-    public function store(CreateRequest $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|max:100',
+        ]);
+      
+
         $workspaces = new Workspace();
         $workspaces->title = $request->title;
         $workspaces->description = $request->description;
@@ -23,6 +28,17 @@ class WorkSpaceController extends Controller
 
      
 
-        return redirect('/workspace/details');
+        return view('Workspaces.details', ["data" => $workspaces]);
     }
+    public function create(Request $request)
+    {
+           return view('Workspaces.creat');
+    }
+
+    // public function  details(Request $request)
+    // {
+    //        return view('Workspaces.details');
+    // }
+
+   
 }
