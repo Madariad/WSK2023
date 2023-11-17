@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
             $table->foreignId('api_token_id')->constrained();
-            $table->decimal('service_usage_seconds', 10, 2);
+            $table->decimal('service_usage_ms', 10, 2);
             $table->decimal('total_cost', 10, 2);
+            $table->timestamp('usege_started_at');
             $table->timestamps();
         });
     }

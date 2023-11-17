@@ -25,8 +25,8 @@ Route::prefix('login')->group(function() {
 });
 
 Route::middleware('auth:sanctum')->group(function() {
-    Route::resource('workspace', WorkspaceController::class);
-    Route::get('/workspace/details',[ WorkSpaceController::class, 'details']);
+    Route::resource('workspace', WorkSpaceController::class);
+    // Route::get('/workspace/details',[ WorkSpaceController::class, 'details']);
     // Route::middleware('count.quotes')->group(function() {
     //     Route::resource('workspace.token', Tokencontroller::class);
     // });

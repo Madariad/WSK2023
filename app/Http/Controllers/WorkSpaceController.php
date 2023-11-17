@@ -35,10 +35,13 @@ class WorkSpaceController extends Controller
            return view('Workspaces.creat');
     }
 
-    // public function  details(Request $request)
-    // {
-    //        return view('Workspaces.details');
-    // }
+    public function  show(Request $request, $id)
+    {
+        $workspaces = Workspace::find($id);
+        $tokens = $workspaces->apiToken()->get();
+        
+        return view('Workspaces.details',  ["data" => $workspaces, "token" => $tokens]);
+    }
 
    
 }

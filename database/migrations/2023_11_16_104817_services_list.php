@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('service_list', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique();
-            $table->decimal('service_cost_per_second', 10, 2);
+            $table->decimal('service_cost_per_ms', 10, 2);
             $table->timestamps();
         });
     }

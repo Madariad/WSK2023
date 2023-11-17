@@ -1,5 +1,6 @@
 @extends("Layouts.app")
 @section("content")
+@section('title', ' create a workspace')
     
 <div class="h-100 d-flex align-items-center justify-content-center bg-dark">
 
@@ -31,4 +32,6 @@
     </form>
 
 </div>
+
+
 @endsection

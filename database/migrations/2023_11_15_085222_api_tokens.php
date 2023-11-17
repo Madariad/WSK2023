@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('token', 40);
             $table->timestamp('date_created')->useCurrent();
             $table->timestamp('date_revoked')->nullable();
+            $table->string('is_revoked')->nullable();
         });
     }
 
